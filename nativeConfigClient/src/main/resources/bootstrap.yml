@@ -1,0 +1,12 @@
+#通过 spring.application.name 结合 spring.profiles.active 拼接⽬标配置⽂件名，
+#configclient-dev.yml，去 Config Server 中查找该⽂件。
+spring:
+  application:
+    name: configclient
+  profiles:
+    active: dev
+#设置客户端优先判断 Config Server 获取是否正常。
+  cloud:
+    config:
+      uri: http://localhost:8762
+      fail-fast: true
